@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Robinhood | Leon's Service</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+/* General Styles */
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: #1B1A1D;
+}
+
+/* Header Styles */
+
+header {
+  height: 70px;
+  background-color: #FFCD92;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.logo {
+  margin-left: 250px;
+}
+
+.logo img {
+  height: 100px;
+}
+
+/* New Section Styles */
+
+
+.search-title2 {
+  padding-top: 100px;
+  margin-left: 250px;
+  font-size: 32px;
+  font-weight: bold;
+  color: #1B1A1D;
+}
+
+.apply-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.scroll-text {
+  display: none;
+  margin-left: 1000px;
+  cursor: pointer;
+}
+
+.apply-button button {
+  width: 148px;
+  height: 48px;
+  background-color: transparent;
+  border: 2px solid black;
+  border-radius: 2px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-right: 267px;
+}
+
+ p {
+    margin-top: 0.2em; 
+    margin-bottom: 0em; 
+   }
+
+
+
+
+.container {
+  margin-left: 200px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.listings{
+  background-color: #F1FDF7;
+  padding-bottom: 90px;
+}
+
+.footer {
+  background-color: #262626;
+  color: #fff;
+  padding: 30px;
+  text-align: right;
+}
+
+.social-icons {
+  margin-right: 250px;
+}
+
+.social-icons a {
+  display: inline-block;
+  margin-left: 10px;
+  color: #fff;
+  font-size: 24px;
+}
+
+.social-icons a:first-child {
+  margin-left: 0;
+}
+
+.profile-card {
+  width: 320px;
+  min-width: 320px;
+  max-width: 320px;
+  min-height: 360px;
+  max-height: 360px;
+  padding: 30px;
+  border-radius: 3px;
+  border: 1px solid #FFCD92;
+  background-color: transparent;
+  margin-left: 250px;
+}
+
+.profile-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 75px;
+  display: block;
+  margin: 0 auto 20px;
+}
+
+.name {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  margin: 0 0 20px;
+  color: #FFCD92;
+}
+
+.role {
+  font-size: 16px;
+  text-align: center;
+  margin: 0 0 20px;
+  color: #CCC;
+}
+
+.divider {
+  border: 0;
+  border-top: 1px solid #FFCD92;
+  margin: 20px 0;
+}
+
+.timezone {
+  font-size: 14px;
+  text-align: center;
+  margin: 0 0 20px;
+  color: #FFCD92;
+}
+
+.timezone-value {
+  font-size: 14px;
+  text-align: center;
+  color: #CCC;
+  margin: 0;
+  padding-bottom: 0px;
+}
+
+.new-section {
+  background-color: #1B1A1D;
+  width: 100%;
+  padding-top: 100px;
+  padding-bottom: 50px;
+}
+
+
+.linked-accounts {
+  width: 320px;
+  min-width: 320px;
+  max-width: 320px;
+  padding: 30px;
+  border-radius: 3px;
+  border: 1px solid #FFCD92;
+  background-color: transparent;
+  margin-top: 20px;
+  margin-left: 250px;
+}
+
+.linked-accounts__title {
+  font-size: 16px;
+  color: #FFCD92;
+  margin: 0 0 20px;
+}
+
+.linked-accounts__item {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.linked-accounts__icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 20px;
+}
+
+.linked-accounts__name {
+  font-size: 14px;
+  color: #FFCD92;
+  color: #fff;
+}
+
+.profile {
+  display: flex;
+}
+
+.summary {
+
+margin-left: 40px;
+}
+
+.summary h2 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #FFCD92;
+}
+
+.summary p {
+  margin-right: 250px;
+  color: #FFF;
+}
+
+.summary h2:not(:first-child) {
+  margin-top: 40px;
+}
+
+.summary p:not(:first-child) {
+  margin-top: 10px;
+}
+a { 
+    text-decoration: none; 
+   } 
+
+.review-num {
+  font-size: 14px;
+  text-align: center;
+  color: #FFCD92;
+}
+
+
+
+.overlay {
+top: 0;
+right: 0;
+bottom: 0;
+left: 0;
+z-index: 1;
+visibility: hidden;
+/* фон затемнения */
+background-color: rgba(0, 0, 0, 0.7);
+opacity: 0;
+position: fixed; /* фиксированное поцизионирование */
+cursor: default; /* тип курсара */
+-webkit-transition: opacity .5s;
+-moz-transition: opacity .5s;
+-ms-transition: opacity .5s;
+-o-transition: opacity .5s;
+transition: opacity .5s;
+}
+.overlay:target {
+visibility: visible;
+opacity: 1;
+}
+.is-image {
+top: 0;
+right: 0;
+bottom: 0;
+left: 0;
+display:block;
+margin: 10&;
+width: 100%;
+height: auto;
+/* скругление углов встроенных картинок */
+-webkit-border-radius: 4px;
+-moz-border-radius: 4px;
+-ms-border-radius: 4px;
+border-radius: 4px;
+}
+/* встроенные элементы м-медиа, фреймы */
+embed, iframe {
+top: 0;
+right: 0;
+bottom: 0; 
+left: 0; 
+display:block;
+margin: auto;
+min-width: 320px;
+max-width: 600px;
+width: 100%;
+}
+.popup h1 { /* заголовок 1 */
+color: #008000;
+text-align: left;
+text-shadow: 0 1px 3px rgba(0,0,0,.3);
+font:24px 'Trebuchet MS', Helvetica, sans-serif;
+font-weight: bold;
+}
+.popup h2 { /* заголовок 2 */
+color: #008000;
+text-align: left;
+text-shadow: 0 1px 3px rgba(0,0,0,.3);
+font:22px 'Trebuchet MS', Helvetica, sans-serif;
+}
+/*** Формируем стили модального окна ***/
+.popup {
+  top: 0;
+  right: 0;
+  left: 0;
+  font-size: 14px;
+  z-index: 10;
+  display: block;
+  visibility: hidden;
+  margin: 0 auto;
+  width: 90%;
+  min-width: 320px;
+  max-width: 600px;
+  position: fixed;
+  padding: 20px;
+  border-radius: 4px;
+  background-color: #1B1A1D;
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.8);
+  opacity: 0;
+  transition: all ease .5s;
+  /* Добавляем свойства для скроллбара */
+  overflow-y: auto;
+  max-height: 80vh;
+}
+/* активируем появление окна и затемнение фона */
+.overlay:target+.popup {
+top: 20%; /* положение окна от верха страницы при появлении */
+visibility: visible;
+opacity: 1; /* убираем прозрачность */
+}
+/* формируем кнопку закрытия */
+.close {
+position: absolute;
+top: -10px;
+right: -10px;padding: 0;
+width: 20px;
+height: 20px;
+border: 2px solid #ccc;
+-webkit-border-radius: 15px;
+-moz-border-radius: 15px;
+-ms-border-radius: 15px;
+-o-border-radius: 15px;
+border-radius: 15px;
+background-color: rgba(61, 61, 61, 0.8);
+-webkit-box-shadow: 0px 0px 10px #000;
+-moz-box-shadow: 0px 0px 10px #000;
+box-shadow: 0px 0px 10px #000;
+text-align: center;
+text-decoration: none;
+font-weight: bold;
+line-height: 20px;
+/* задаём значения и эффект перехода при наведении */
+-webkit-transition: all ease .8s;
+-moz-transition: all ease .8s;
+-ms-transition: all ease .8s;
+-o-transition: all ease .8s;
+transition: all ease .8s;
+}
+.close:before {
+color: rgba(255, 255, 255, 0.9);
+content: "X";
+text-shadow: 0 -1px rgba(0, 0, 0, 0.9);
+font-size: 12px;
+}
+.close:hover {
+background-color: rgba(252, 20, 0, 0.8);
+/* крутим кнопку при наведении */
+-webkit-transform: rotate(360deg);
+-moz-transform: rotate(360deg);
+-ms-transform: rotate(360deg);
+-o-transform: rotate(360deg);
+transform: rotate(360deg);    
+}
+/* опционально при добавлении вложений */
+.popup p, .popup div {
+margin-bottom: 10px;
+}
+
+
+.image-wrapper {
+  width: 50px;
+  height: 50px;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.image2 {
+  display: block;
+  width: 50px;
+  height: 50px;
+  border-radius: 40px;
+}
+
+.nick {
+  font-size: 24px;
+  color: #FFFFFF;
+  margin-bottom: 20px;
+}
+
+.title2 {
+  font-size: 16px;
+  color: #FFFFFF;
+  margin-bottom: 20px;
+}
+
+.description {
+  text-align: justify;
+  font-size: 12px;
+  color: #FFFFFF;
+  line-height: 1.5;
+  padding-bottom: 40px;
+}
+
+</style>
+
+
+</head>
+<body>
+  <header>
+    <a href="/index.html"><div class="logo">
+      <img src="https://i.ibb.co/9WPJmLL/image-removebg-preview.png"></img>
+
+  </div></a>
+  <div class="apply-button">
+  <button><font color="#111111">Apply for Listing</font></button>
+</div>
+    </div>
+  </header>
+
+
+
+ <div class="new-section">
+<div class="profile">
+<div class="profile-card">
+  <img src="https://media.discordapp.net/attachments/1076546487871356958/1082045942737412167/image.png?width=612&height=609" alt="Profile Image" class="profile-image">
+  <h2 class="name">Robinhood</h2>
+  <h3 class="role">Community Manager, Moderator</h3>
+  <a href="#win1"><p class="review-num"><b>5.0</b> (7 reviews)</p></a>
+  <a href="#x" class="overlay" id="win1"></a>
+   <div class="popup">
+  <div class="image-wrapper">
+    <img src="https://media.discordapp.net/attachments/1076546487871356958/1077898550131838997/image.png?width=608&height=609" alt="Image" class="image2">
+  </div>
+      <div class="nick"><b>Georgio</b></div>
+     <div class="title2"><b>5.0</b></div>
+  <div class="description">He does his work very responsibly and quickly, is very kind and always willing to help. My close friend, glad I was able to meet him! I recommend him for hiring <3</div>
+    
+    <div class="image-wrapper">
+    <img src="https://media.discordapp.net/attachments/1076546487871356958/1077898550131838997/image.png?width=608&height=609" alt="Image" class="image2">
+  </div>
+      <div class="nick"><b>Frank</b></div>
+     <div class="title2"><b>5.0</b></div>
+  <div class="description">He does his work very responsibly and quickly, is very kind and always willing to help. My close friend, glad I was able to meet him! I recommend him for hiring <3</div>
+    
+    <div class="image-wrapper">
+    <img src="https://media.discordapp.net/attachments/1076546487871356958/1077898550131838997/image.png?width=608&height=609" alt="Image" class="image2">
+  </div>
+      <div class="nick"><b>Frank</b></div>
+     <div class="title2"><b>5.0</b></div>
+  <div class="description">He does his work very responsibly and quickly, is very kind and always willing to help. My close friend, glad I was able to meet him! I recommend him for hiring <3</div>
+    
+    <div class="image-wrapper">
+    <img src="https://media.discordapp.net/attachments/1076546487871356958/1077898550131838997/image.png?width=608&height=609" alt="Image" class="image2">
+  </div>
+      <div class="nick"><b>Frank</b></div>
+     <div class="title2"><b>5.0</b></div>
+  <div class="description">He does his work very responsibly and quickly, is very kind and always willing to help. My close friend, glad I was able to meet him! I recommend him for hiring <3</div>
+    
+    <div class="image-wrapper">
+    <img src="https://media.discordapp.net/attachments/1076546487871356958/1077898550131838997/image.png?width=608&height=609" alt="Image" class="image2">
+  </div>
+      <div class="nick"><b>Frank</b></div>
+     <div class="title2"><b>5.0</b></div>
+  <div class="description">He does his work very responsibly and quickly, is very kind and always willing to help. My close friend, glad I was able to meet him! I recommend him for hiring <3</div>
+
+    <a class="close"title="Close" href="#close"></a>
+    </div>
+  <hr class="divider">
+  <p class="timezone">Time Zone</p>
+  <p class="timezone-value">West coast (GMT -7)</p>
+</div>
+<div class="summary">
+    <h2>About Me</h2>
+    <p>My name is Robinhood and I have been in the NFT space since November 2021. I have worked with more than 60+ projects, mainly as a collab manager. I am a hardworking individual who utilizes my time and effort in doing collaborations and strives to provide the best possible outcome for the project that I work with. I am also an expert as an advisor and a marketer, I can guide you how to make your project successful step by step.
+My name is Robinhood and I have been in the NFT space since November 2021. I have worked with more than 60+ projects, mainly as a collab manager. I am a hardworking individual who utilizes my time and effort in doing collaborations and strives to provide the best possible outcome for the project that I work with. I am also an expert as an advisor and a marketer, I can guide you how to make your project successful step by step.
+
+If you would like to hire me, kindly message me on discord or twitter.</p>
+  <h2>Price</h2>
+    <p>Discussed individually</p>
+  </div>
+    
+  </div>
+   <div class="linked-accounts">
+  <h3 class="linked-accounts__title">Linked Accounts</h3>
+  <a href="#"><div class="linked-accounts__item">
+    <img src="https://i.ibb.co/5W1GGtR/image-removebg-preview-7.png" alt="Discord" class="linked-accounts__icon">
+   <span class="linked-accounts__name"><b><font color="5865F2">Discord</b></span>
+  </div></a>
+  <a href="#"><div class="linked-accounts__item">
+    <img src="https://i.ibb.co/dWxjdCp/image-removebg-preview-8.png" alt="Twitter" class="linked-accounts__icon">
+      <span class="linked-accounts__name"><b><font color="1D9BF0">Twitter</b></span>
+  </div></a>
+</div>
+</div>
+
+
+
+</body>
+</html>

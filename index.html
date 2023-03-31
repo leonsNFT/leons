@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Freelance Services Marketplace for Your Project</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
+
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+/* General Styles */
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Header Styles */
+
+header {
+  height: 70px;
+  background-color: #FFCD92;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.logo {
+  margin-left: 250px;
+}
+
+.logo img {
+  height: 100px;
+}
+
+/* New Section Styles */
+
+.new-section {
+  background-color: #1B1A1D;
+  background-image: url("https://i.ibb.co/YW9RDdz/Frame-1-1.png");
+  background-position: right bottom;
+  background-repeat: no-repeat;
+  height: 500px;
+  width: 100%;
+
+}
+
+.search-container {
+  margin-left: 250px;
+  display: flex;
+  align-items: center;
+  margin-right: 650px;
+}
+
+.search-bar {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  height: 48px;
+  width: 500px;
+  border-radius: 3px 0px 0px 3px;
+  padding: 0 20px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+  background-color: #FFFFFF;
+  float: left;
+}
+
+.search-bar::placeholder {
+  color: #CCCCCC;
+}
+
+.search-btn {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  height: 48px;
+  width: 106px;
+  background-color: #FFCB8D;
+  color: #111111;
+  border: none;
+  border-radius: 0px 3px 3px 0px;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+  cursor: pointer;
+  float: left;
+}
+
+.search-btn:hover {
+  background-color: #FF981E;
+}
+
+.search-title {
+  padding-top: 120px;
+  margin-left: 250px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #FFFFFF;
+}
+.search-title2 {
+  padding-top: 100px;
+  margin-left: 250px;
+  font-size: 32px;
+  font-weight: bold;
+  color: #1B1A1D;
+}
+
+.apply-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.scroll-text {
+  display: none;
+  margin-left: 1000px;
+  cursor: pointer;
+}
+
+.apply-button button {
+  width: 148px;
+  height: 48px;
+  background-color: transparent;
+  border: 2px solid black;
+  border-radius: 2px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-right: 250px;
+}
+
+ p {
+    margin-top: 0.2em; 
+    margin-bottom: 0em; 
+   }
+
+
+.person-block {
+  width: 306px;
+  height: 400px;
+  background-color: #333;
+  border-radius: 10px;
+  margin-top: 50px;
+  margin-left: 50px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.person-image {
+  width: 100%;
+  height: 245px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  overflow: hidden;
+}
+
+.person-image img {
+  width: 100%;
+  height: auto;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.person-info {
+  padding: 20px;
+  text-align: center;
+}
+
+.person-name {
+  margin-top: -1px;
+  margin-bottom: 10px;
+  color: #fff;
+  font-size: 24px;
+}
+
+.person-description {
+  margin-bottom: 20px;
+  color: #fff;
+  font-size: 16px;
+}
+
+.contact-button {
+  width: 148px;
+  height: 38px;
+  background-color: #446EE7;
+  color: #fff;
+  border-radius: 3px;
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.contact-button:hover {
+  background-color: #033CE0;
+}
+
+.container {
+  margin-left: 200px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.listings{
+  background-color: #F1FDF7;
+  padding-bottom: 90px;
+}
+
+.footer {
+  background-color: #262626;
+  color: #fff;
+  padding: 30px;
+  text-align: right;
+}
+
+.social-icons {
+  margin-right: 250px;
+}
+
+.social-icons a {
+  display: inline-block;
+  margin-left: 10px;
+  color: #fff;
+  font-size: 24px;
+}
+
+.social-icons a:first-child {
+  margin-left: 0;
+}
+
+</style>
+
+
+
+</head>
+<body>
+  <header>
+    <a href="/index.html">
+    <div class="logo">
+      <img src="https://i.ibb.co/9WPJmLL/image-removebg-preview.png"></img>
+  </div>
+</a>
+  <p class="scroll-text"><font color="#111111"><b>Search</b></font></p>
+  <div class="apply-button">
+  <button><font color="#111111">Apply for Listing</font></button>
+</div>
+    </div>
+  </header>
+
+  <div class="new-section">
+    <div class="search-title">
+     <span><h1>Find the web3 <i>freelancers</i>
+ <p>for your project</h1></span>
+    </div>
+    <div class="search-container">
+      <input type="text" class="search-bar" placeholder="Search your web3 worker">
+      <button class="search-btn"><b>Search</b></button>
+    </div>
+  </div>
+
+
+
+<section class="listings">
+<div class="search-title2">
+<span>Popular professional web3 workers</span>
+    </div>
+
+<div class="container">
+  
+<div class="person-block">
+  <div class="person-image">
+    <img src="https://media.discordapp.net/attachments/1076546487871356958/1077898550131838997/image.png?width=608&height=609" alt="Person Image">
+  </div>
+  <div class="person-info">
+    <h2 class="person-name">Robinhood</h2>
+    <p class="person-description"><font color="#DBDBDB">Community Manager, Moderator</font></p>
+    <a href="/worker.html"><button class="contact-button">Details</button></a>
+  </div>
+</div>
+  
+  <div class="person-block">
+  <div class="person-image">
+    <img src="https://media.discordapp.net/attachments/1076546487871356958/1082045942737412167/image.png?width=612&height=609" alt="Person Image">
+  </div>
+  <div class="person-info">
+    <h2 class="person-name">Cute Seal</h2>
+    <p class="person-description">UX/UI Designer, Moderator  </p>
+    <button class="contact-button">Details</button>
+  </div>
+</div>
+  
+  <div class="person-block">
+  <div class="person-image">
+    <img src="https://media.discordapp.net/attachments/1076546487871356958/1084125037231079544/image.jpg?width=609&height=609" alt="Person Image">
+  </div>
+  <div class="person-info">
+    <h2 class="person-name">Georgio26</h2>
+    <p class="person-description">Community Manager, Moderator  </p>
+    <button class="contact-button">Details</button>
+  </div>
+</div>
+  
+  <div class="person-block">
+  <div class="person-image">
+    <img src="https://media.discordapp.net/attachments/1076546487871356958/1084125037231079544/image.jpg?width=609&height=609" alt="Person Image">
+  </div>
+  <div class="person-info">
+    <h2 class="person-name">Georgio26</h2>
+    <p class="person-description">Community Manager, Moderator  </p>
+    <button class="contact-button">Details</button>
+  </div>
+</div>
+  
+
+  
+    </div>
+</section>
+
+<footer class="footer">
+  <div class="social-icons">
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    <a href="#"><i class="fab fa-discord"></i></a>
+    <a href="#"><i class="fab fa-magiceden"></i></a>
+  </div>
+</footer>
+</body>
+<script>
+const scrollText = document.querySelector('.scroll-text');
+
+window.addEventListener('scroll', function() {
+  const scrollPos = window.scrollY;
+
+  if (scrollPos > 200) {
+    scrollText.style.display = 'block';
+  } else {
+    scrollText.style.display = 'none';
+  }
+});
+
+</script>
+</html>
